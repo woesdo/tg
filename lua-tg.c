@@ -1885,6 +1885,3 @@ void lua_init (const char *file) {
 }
 
 #endif
-
---@behroozyaghi
---@nod32team
