@@ -1,7 +1,5 @@
-
-
 do
-local SUDO = 106164433 --put your id here(BOT OWNER ID)
+local Dev = 122774063 --put your id here(BOT OWNER ID)
 
 local function setrank(msg, name, value) -- setrank function
   local hash = nil
@@ -26,16 +24,16 @@ local function res_user_callback(extra, success, result) -- /info <username> fun
 	local hash = 'rank:'..extra.chat2..':variables'
 	local value = redis:hget(hash, result.id)
     if not value then
-	 if result.id == tonumber(SUDO) then
-	   text = text..'مقام : مدیر کل ربات (Executive Admin) \n\n'
+	 if result.id == tonumber(Dev) then
+	   text = text..'مقام : مدیر کل ربات (baba 😍) \n\n'
 	  elseif is_admin2(result.id) then
-	   text = text..'مقام : ادمین ربات (Admin) \n\n'
+	   text = text..'مقام : ادمین ربات (baba 😍) \n\n'
 	  elseif is_owner2(result.id, extra.chat2) then
-	   text = text..'مقام : مدیر کل گروه (Owner) \n\n'
+	   text = text..'مقام : مدیر کل گروه (saheb gp 🤔) \n\n'
 	  elseif is_momod2(result.id, extra.chat2) then
-	    text = text..'مقام : مدیر گروه (Moderator) \n\n'
+	    text = text..'مقام : مدیر گروه (modir gp 😂) \n\n'
       else
-	    text = text..'مقام : کاربر (Member) \n\n'
+	    text = text..'مقام : کاربر (chos member🙄) \n\n'
 	 end
    else
    text = text..'مقام : '..value..'\n\n'
@@ -45,7 +43,7 @@ local function res_user_callback(extra, success, result) -- /info <username> fun
   local um_hash = 'msgs:'..result.id..':'..extra.chat2
   user_info_msgs = tonumber(redis:get(um_hash) or 0)
   text = text..'تعداد پیام های فرستاده شده : '..user_info_msgs..'\n\n'
-  text = text..'nod32 edited version'
+  text = text..'✌🏻Dokhaniat✌🏻'
   send_msg(extra.receiver, text, ok_cb,  true)
   else
 	send_msg(extra.receiver, extra.user..' نام کاربری مورد نظر یافت نشد.', ok_cb, false)
@@ -65,16 +63,16 @@ local function action_by_id(extra, success, result)  -- /info <ID> function
   local hash = 'rank:'..extra.chat2..':variables'
   local value = redis:hget(hash, result.id)
   if not value then
-	 if result.id == tonumber(SUDO) then
-	   text = text..'مقام : مدیر کل ربات (Executive Admin) \n\n'
+	 if result.id == tonumber(Dev) then
+	   text = text..'مقام : مدیر کل ربات (baba 😍) \n\n'
 	  elseif is_admin2(result.id) then
-	   text = text..'مقام : ادمین ربات (Admin) \n\n'
+	   text = text..'مقام : ادمین ربات (baba 😍) \n\n'
 	  elseif is_owner2(result.id, extra.chat2) then
-	   text = text..'مقام : مدیر کل گروه (Owner) \n\n'
+	   text = text..'مقام : مدیر کل گروه (saheb gp 🤔) \n\n'
 	  elseif is_momod2(result.id, extra.chat2) then
-	   text = text..'مقام : مدیر گروه (Moderator) \n\n'
+	   text = text..'مقام : مدیر گروه (modir gp 😂) \n\n'
 	  else
-	   text = text..'مقام : کاربر (Member) \n\n'
+	   text = text..'مقام : کاربر (chos member🙄) \n\n'
 	  end
    else
     text = text..'مقام : '..value..'\n\n'
@@ -84,7 +82,7 @@ local function action_by_id(extra, success, result)  -- /info <ID> function
   local um_hash = 'msgs:'..result.id..':'..extra.chat2
   user_info_msgs = tonumber(redis:get(um_hash) or 0)
   text = text..'تعداد پیام های فرستاده شده : '..user_info_msgs..'\n\n'
-  text = text..'nod32 edited version'
+  text = text..'✌🏻Dokhaniat✌🏻'
   send_msg(extra.receiver, text, ok_cb,  true)
   else
   send_msg(extra.receiver, 'ایدی شخص مورد نظر در سیستم ثبت نشده است.\nاز دستور زیر استفاده کنید\n/info @username', ok_cb, false)
@@ -103,16 +101,16 @@ local function action_by_reply(extra, success, result)-- (reply) /info  function
 	local hash = 'rank:'..result.to.id..':variables'
 		local value = redis:hget(hash, result.from.id)
 		 if not value then
-		    if result.from.id == tonumber(SUDO) then
-		       text = text..'مقام : مدیر کل ربات (Executive Admin) \n\n'
+		    if result.from.id == tonumber(Dev) then
+		       text = text..'مقام : مدیر کل ربات (baba 😍) \n\n'
 		     elseif is_admin2(result.from.id) then
-		       text = text..'مقام : ادمین ربات (Admin) \n\n'
+		       text = text..'مقام : ادمین ربات (baba 😍) \n\n'
 		     elseif is_owner2(result.from.id, result.to.id) then
-		       text = text..'مقام : مدیر کل گروه (Owner) \n\n'
+		       text = text..'مقام : مدیر کل گروه (saheb gp 🤔) \n\n'
 		     elseif is_momod2(result.from.id, result.to.id) then
-		       text = text..'مقام : مدیر گروه (Moderator) \n\n'
+		       text = text..'مقام : مدیر گروه (modir gp 😂) \n\n'
 		 else
-		       text = text..'مقام : کاربر (Member) \n\n'
+		       text = text..'مقام : کاربر (chos member🙄) \n\n'
 			end
 		  else
 		   text = text..'مقام : '..value..'\n\n'
@@ -123,7 +121,7 @@ local function action_by_reply(extra, success, result)-- (reply) /info  function
   local um_hash = 'msgs:'..result.from.id..':'..result.to.id
   user_info_msgs = tonumber(redis:get(um_hash) or 0)
   text = text..'تعداد پیام های فرستاده شده : '..user_info_msgs..'\n\n'
-  text = text..'nod32 edited version'
+  text = text..'✌🏻Dokhaniat✌🏻'
   send_msg(extra.receiver, text, ok_cb, true)
 end
 
@@ -133,7 +131,7 @@ setrank(result, result.from.id, value)
 end
 
 local function run(msg, matches)
- if matches[1]:lower() == 'setrank' then
+ if matches[1]:lower() == 'تغییر به' then
   local hash = 'usecommands:'..msg.from.id..':'..msg.to.id
   redis:incr(hash)
   if not is_sudo(msg) then
@@ -152,7 +150,7 @@ local function run(msg, matches)
   return text
   end
   end
- if matches[1]:lower() == 'info' and not matches[2] then
+ if matches[1]:lower() == 'آیدی' and not matches[2] then
   local receiver = get_receiver(msg)
   local Reply = msg.reply_id
   if msg.reply_id then
@@ -171,16 +169,16 @@ local function run(msg, matches)
 	if hash then
 	  local value = redis:hget(hash, msg.from.id)
 	  if not value then
-		if msg.from.id == tonumber(SUDO) then
-		 text = text..'مقام : مدیر کل ربات (Executive Admin) \n\n'
+		if msg.from.id == tonumber(Dev) then
+		 text = text..'مقام : مدیر کل ربات (baba 😍) \n\n'
 		elseif is_sudo(msg) then
-		 text = text..'مقام : ادمین ربات (Admin) \n\n'
+		 text = text..'مقام : ادمین ربات (baba 😍) \n\n'
 		elseif is_owner(msg) then
-		 text = text..'مقام : مدیر کل گروه (Owner) \n\n'
+		 text = text..'مقام : مدیر کل گروه (saheb gp 🤔) \n\n'
 		elseif is_momod(msg) then
-		 text = text..'مقام : مدیر گروه (Moderator) \n\n'
+		 text = text..'مقام : مدیر گروه (modir gp 😂) \n\n'
 		else
-		 text = text..'مقام : کاربر (Member) \n\n'
+		 text = text..'مقام : کاربر (chos member🙄) \n\n'
 		end
 	  else
 	   text = text..'مقام : '..value..'\n'
@@ -196,7 +194,7 @@ local function run(msg, matches)
 	 text = text..'نام گروه : '..msg.to.title..'\n'
      text = text..'ایدی گروه : '..msg.to.id
     end
-	text = text..'\n\nnod32 edited version'
+	text = text..'\n\n✌🏻Dokhaniat✌🏻'
     return send_msg(receiver, text, ok_cb, true)
     end
   end
@@ -224,17 +222,12 @@ return {
 	'(Reply)!setrank <rank>: change members rank.',
   },
   patterns = {
-	"^[/!]([Ii][Nn][Ff][Oo])$",
-	"^[/!]([Ii][Nn][Ff][Oo]) (.*)$",
-	"^[/!]([Ss][Ee][Tt][Rr][Aa][Nn][Kk]) (%d+) (.*)$",
-	"^[/!]([Ss][Ee][Tt][Rr][Aa][Nn][Kk]) (.*)$",
+	"^(آیدی)$",
+	"^(آیدی) (.*)$",
+	"^(تغییر به) (%d+) (.*)$",
+	"^(تغییر به) (.*)$",
   },
   run = run
 }
 
 end
-
---Copyright; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
